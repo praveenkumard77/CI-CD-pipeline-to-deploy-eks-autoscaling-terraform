@@ -14,10 +14,11 @@ data "aws_availability_zones" "available" {
 provider "http" {
 }
 
-terraform {
-    backend "s3" {
+data "terraform_remote_state" "network" {
+  backend = "s3"
+  config = {
     bucket = "terraform-statefile-bucket-1"
-    key    = "terraform.tfstate"
+    key    = "network/terraform.tfstate"
     region = "us-west-2"
   }
 }
