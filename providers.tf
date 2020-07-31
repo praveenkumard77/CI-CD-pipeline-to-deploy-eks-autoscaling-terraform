@@ -20,5 +20,6 @@ terraform {
     key    = "terraform.tfstate"
     region = "us-west-2"
     shared_credentials_file = "/var/lib/jenkins/workspace/terraform.tfvars"
+    profile = "default"
   }
 }
